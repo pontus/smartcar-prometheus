@@ -239,8 +239,9 @@ def get_handler():
                 first = True
                 for key in ds["vehicle"]:
                     if not first:
-                        self.wfile.write(",".encode())
+                        self.wfile.write(", ".encode())
                     self.wfile.write(f'{key}="{ds["vehicle"][key]}"'.encode())
+                    first = False
 
                 self.wfile.write("} 1\n".encode())
 
